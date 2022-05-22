@@ -56,7 +56,7 @@ CONFIDENCE = 0.7
 
 ## How it works?
 
-The method is extremly simple, it utilizes two things. The first one is the [Template Matching](https://docs.opencv.org/4.x/d4/dc6/tutorial_py_template_matching.html), this is what `pyautogui.locateOnScreen` uses under the hood and the second one is the [PyGetCursorInfo](https://github.com/mhammond/pywin32/blob/c08c3d9e4a503b195c312b0fbd51454bd2ee665a/win32/src/win32gui.i#L2486) function which is exposed by the `win32gui` lib.
+The method is extremely simple, it utilizes two things. The first one is the [Template Matching](https://docs.opencv.org/4.x/d4/dc6/tutorial_py_template_matching.html), this is what `pyautogui.locateOnScreen` uses under the hood and the second one is the [PyGetCursorInfo](https://github.com/mhammond/pywin32/blob/c08c3d9e4a503b195c312b0fbd51454bd2ee665a/win32/src/win32gui.i#L2486) function which is exposed by the `win32gui` lib.
 
 The solution lies in the gif from the beginning, whenever the bobber actually catches a fish the AoE (Area of Effect) for the bobber becomes bigger allowing us to detect a change on the cursor, then we use the `GetCursorInfo` to catch the change of the cursor and if it becomes a different `tuple` from the default one which we set when there is nothing active on our cursor. Then we execute the click.
 
