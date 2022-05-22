@@ -66,6 +66,10 @@ Now about the fine-tuning, look at this example
 
 The `TUNE_BAIT_MOUSE_UNDER_PX` variable which doesn't have the best name ever is indicated with red, in simple terms it is how many pixels under the located bobber to place the mouse. For myself the range between 28-32 works the best, but as I said earlier this could differ.
 
+## Edge cases
+
+There is a rare edge case when the default tuple for the cursor doesn't change which happens if the script isn't tune right, I've solved this by resetting the cursor at `x=10, y=10` position of the screen and then bringing it back. In a case when the cursor's icon doesn't change and if it sits with the bait icon the bot would just wait the duration of the fishing and reset itself.
+
 ## Additional features
 
 I've added a bit of randomness in the timings between each press of the fishing and the click of the bobber with additionally pressing space every now and then. Apparently the server can detect that something fishy is going on when this randomness is removed.
