@@ -30,7 +30,7 @@ Before using the bot, you need to supply it with an image of the bait. The image
 
 ![Bait Example](./assets/bait_example.png)
 
-Save the image and place it at the root of the script as `bait.png`, additionaly you can adjust the variable `BAIT_IMAGE` in the [fishingbot](./fishingbot.py).
+Save the image and place it at the root of the script as `bait.png`, additionally you can adjust the variable `BAIT_IMAGE` in the [fishingbot](./fishingbot.py).
 
 > ⚠️ It is important for you to take the photo because of the graphical/display settings which can be different for each computer.
 
@@ -49,8 +49,8 @@ CONFIDENCE = 0.7
 | Variable | Description |
 |--- |---
 | FISHING_BUTTON | The button that you use for fishing, in my case it was `b` |
-| TUNE_BAIT_MOUSE_UNDER_PX | The offset pixels where the mouse is going to be whenver there is a bait, see the [How it works?](#how-it-works) section |
-| EDGE_RESET | Those aret the `x, y` cordinates to reset the mouse after catching the fish, it is used to improve the success rate, leave it at `10, 10` |
+| TUNE_BAIT_MOUSE_UNDER_PX | The offset pixels where the mouse is going to be whenever there is a bait, see the [How it works?](#how-it-works) section |
+| EDGE_RESET | Those are the `x, y` coordinates to reset the mouse after catching the fish, it is used to improve the success rate, leave it at `10, 10` |
 | ACTIVE_AFTER | The bot simply waits 2 secs before it starts |
 | CONFIDENCE | The confidence of the template matching |
 
@@ -58,7 +58,7 @@ CONFIDENCE = 0.7
 
 The method is extremly simple, it utilizes two things. The first one is the [Template Matching](https://docs.opencv.org/4.x/d4/dc6/tutorial_py_template_matching.html), this is what `pyautogui.locateOnScreen` uses under the hood and the second one is the [PyGetCursorInfo](https://github.com/mhammond/pywin32/blob/c08c3d9e4a503b195c312b0fbd51454bd2ee665a/win32/src/win32gui.i#L2486) function which is exposed by the `win32gui` lib.
 
-The solution lies in the gif from the beginging, whenever the bobber actually catches a fish the AoE (Area of Effect) for the bobber becomes bigger allowing us to detect a change on the cursor, then we use the `GetCursorInfo` to catch the change of the cursor and if it becomes a different `tuple` from the default one which we set whenver there is nothing active on our cursor. Then we execute the click.
+The solution lies in the gif from the beginning, whenever the bobber actually catches a fish the AoE (Area of Effect) for the bobber becomes bigger allowing us to detect a change on the cursor, then we use the `GetCursorInfo` to catch the change of the cursor and if it becomes a different `tuple` from the default one which we set when there is nothing active on our cursor. Then we execute the click.
 
 Now about the fine-tuning, look at this example
 
@@ -68,4 +68,4 @@ The `TUNE_BAIT_MOUSE_UNDER_PX` variable which doesn't have the best name ever is
 
 ## Additional features
 
-I've added a bit of randomness in the timings between each press of the fishing and the click of the bobber with additionally pressing space every now and then. Appernatly the server can detect that something fishy is going on whenver this randomness is removed.
+I've added a bit of randomness in the timings between each press of the fishing and the click of the bobber with additionally pressing space every now and then. Apparently the server can detect that something fishy is going on when this randomness is removed.
