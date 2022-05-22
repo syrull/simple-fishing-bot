@@ -64,7 +64,7 @@ Now about the fine-tuning, look at this example
 
 ![Abstract](./assets/diagram_bobber.png)
 
-The `TUNE_BAIT_MOUSE_UNDER_PX` variable which doesn't have the best name name ever is indicated with red, in simple terms it is how many pixels under the located bobber to place the mouse. For myself the range between 28-32 works the best, but as I said earlier this could differ.
+The `TUNE_BAIT_MOUSE_UNDER_PX` variable which doesn't have the best name ever is indicated with red, in simple terms it is how many pixels under the located bobber to place the mouse. For myself the range between 28-32 works the best, but as I said earlier this could differ.
 
 ## Additional features
 
