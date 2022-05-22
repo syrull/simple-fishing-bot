@@ -36,7 +36,7 @@ Save the image and place it at the root of the script as `bait.png`, additionall
 
 ### Fine-tune the script
 
-The fine tunining that you have to do consists of:
+The fine tunning that you have to do consists of:
 
 ```python
 FISHING_BUTTON = "b"
